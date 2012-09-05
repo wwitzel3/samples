@@ -27,6 +27,13 @@ public class Percolation {
         return state[pos] == 1;
     }
     
+    public double openCount() {
+        double sum = 0;
+        for (int i: state)
+            sum += i;
+        return sum-2;
+    }
+    
     public boolean isFull(int row, int col) {
         int pos = position(row, col);
         if (isOpen(row, col))
